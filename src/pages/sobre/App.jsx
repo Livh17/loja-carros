@@ -23,8 +23,8 @@ export default function App() {
 
         <div className="dev">
           <img src={logo} height={100} />
-          <h2>Desenvolvido pelo aluno Livia da Silva Pereira
-          <br/>turma Informatica B</h2>
+          <p>Desenvolvido pelo aluno Livia da Silva Pereira
+          <br/>turma Informatica B</p>
         </div>
 
 
