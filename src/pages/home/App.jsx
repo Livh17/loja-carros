@@ -4,13 +4,17 @@ import Cabecalho from '../../components/cabecalho/Cabecalho.jsx';
 import carro from '../../assets/images/carro.png'
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [resultado, setResultado] = useState(0)
+  const [valor, setValor] = useState()
+  const [parcelas, setParcelas] = useState()
+  const [desconto, setDesconto] = useState()
 
   function calcularParcelas() {
-    
+
+    let total = (Number(valor) - Number(desconto)) / Number(parcelas)
+
+    setResultado(total)
   }
-
-
 
 
   return (
@@ -30,17 +34,17 @@ export default function App() {
         <h1>Informações</h1>
 
         <h2>Valor do Carro</h2>
-        <input type="text" />
+        <input type="text" placeholder='0' value={valor} onChange={(e) => setValor(e.target.value)}/>
 
         <h2>Desconto</h2>
-        <input type="text" />
+        <input type="text" placeholder='0' value={desconto} onChange={(e) => setDesconto(e.target.value)} />
 
         <h2>Quantidade de Parcelas</h2>
-        <input type="text" />
+        <input type="text" placeholder='0' value={parcelas} onChange={(e) => setParcelas(e.target.value)}/>
 
-        <button>CALCULAR</button>
+        <button onClick={calcularParcelas}>CALCULAR</button>
 
-        <p>Parcelas de </p>
+        <p>Parcelas de R$ {resultado.toFixed(2)} </p>
 
       </div>
 
